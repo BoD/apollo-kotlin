@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   debug:
+    runs-on: ubuntu-latest
     steps:
       - name: "Debug"
         run: |
