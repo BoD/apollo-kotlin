@@ -20,7 +20,9 @@ jobs:
           echo ${{ github.ref_name }}
           echo ${{ startsWith(github.ref_name, 'release-') }}
           echo ${{ !startsWith(github.ref_name, 'release-') }}
-
+          echo ${{ github.head_ref }}
+          echo ${{ startsWith(github.head_ref, 'release-') }}
+          echo ${{ !startsWith(github.head_ref, 'release-') }}
 #  tests-gradle:
 #    if: "!startsWith(github.ref_name, 'release-')"
 #    runs-on: macos-11
