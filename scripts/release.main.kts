@@ -44,7 +44,7 @@ val releaseBranchName = "release-$versionToRelease"
 runCommand("git", "checkout", "-b", releaseBranchName)
 setCurrentVersion(versionToRelease)
 setVersionInDocs(versionToRelease, nextSnapshot)
-runCommand("git", "commit", "-a", "-m", "release $versionToRelease")
+runCommand("git", "commit", "-a", "-m", "Release $versionToRelease")
 runCommand("git", "push", "origin", releaseBranchName)
 runCommand("gh", "pr", "create", "--fill")
 
@@ -68,7 +68,7 @@ println("Tag pushed.")
 val bumpVersionBranchName = "release-$versionToRelease-bump-snapshot"
 runCommand("git", "checkout", "-b", bumpVersionBranchName)
 setCurrentVersion(nextSnapshot)
-runCommand("git", "commit", "-a", "-m", "version is now $nextSnapshot")
+runCommand("git", "commit", "-a", "-m", "Version is now $nextSnapshot")
 runCommand("git", "push", "origin", bumpVersionBranchName)
 runCommand("gh", "pr", "create", "--fill")
 
