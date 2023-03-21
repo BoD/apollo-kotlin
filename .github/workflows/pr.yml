@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   tests-gradle:
-    if: ${{ !startsWith(github.ref_name, 'release-') }}
+    if: ${{ startsWith(github.ref_name, 'release-') != true }}
     runs-on: macos-11
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
@@ -42,7 +42,7 @@ jobs:
           path: diagnostics.zip
 
   tests-no-gradle:
-    if: ${{ !startsWith(github.ref_name, 'release-') }}
+    if: ${{ startsWith(github.ref_name, 'release-') != true }}
     runs-on: macos-11
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
@@ -71,7 +71,7 @@ jobs:
           path: diagnostics.zip
 
   tests-integration:
-    if: ${{ !startsWith(github.ref_name, 'release-') }}
+    if: ${{ startsWith(github.ref_name, 'release-') != true }}
     runs-on: macos-11
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c #v3.3.0
@@ -100,7 +100,7 @@ jobs:
           path: diagnostics.zip
 
   intellij-plugin:
-    if: ${{ !startsWith(github.ref_name, 'release-') }}
+    if: ${{ startsWith(github.ref_name, 'release-') != true }}
     name: Build IntelliJ Plugin
     runs-on: ubuntu-latest
     outputs:
