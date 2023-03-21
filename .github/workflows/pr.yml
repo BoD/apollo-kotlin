@@ -14,11 +14,11 @@ concurrency:
 jobs:
   debug:
     steps:
-      -name: "Debug"
-      run: |
-        echo ${{ github.ref_name }}
-        echo ${{ startsWith(github.ref_name, 'release-') }}
-        echo ${{ !startsWith(github.ref_name, 'release-') }}
+      - name: "Debug"
+        run: |
+          echo ${{ github.ref_name }}
+          echo ${{ startsWith(github.ref_name, 'release-') }}
+          echo ${{ !startsWith(github.ref_name, 'release-') }}
 
 #  tests-gradle:
 #    if: "!startsWith(github.ref_name, 'release-')"
