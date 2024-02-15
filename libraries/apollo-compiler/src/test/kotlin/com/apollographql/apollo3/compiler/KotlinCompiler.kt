@@ -23,6 +23,7 @@ object KotlinCompiler {
       inheritClassPath = true
       verbose = false
       messageOutputStream = okio.blackholeSink().buffer().outputStream()
+      languageVersion = "2.0"
     }.compile()
 
     if (result.exitCode != KotlinCompilation.ExitCode.OK) {
