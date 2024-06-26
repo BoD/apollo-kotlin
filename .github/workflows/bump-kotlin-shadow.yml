@@ -8,11 +8,6 @@ on:
 env:
   DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
 
-# Cancel any current or previous job from the same PR
-concurrency:
-  group: ${{ github.head_ref }}
-  cancel-in-progress: true
-
 jobs:
   tests-gradle:
     if: "!startsWith(github.head_ref, 'release-')"
