@@ -5,12 +5,14 @@ on:
     paths-ignore:
       - 'docs/**'
       - '*.md'
+  workflow_dispatch:
+
 env:
   DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
 
 # Cancel any current or previous job from the same PR
 concurrency:
-  group: ${{ github.head_ref }}
+  group: ${{ format('{0}-', github.head_ref) }}
   cancel-in-progress: true
 
 jobs:
