@@ -31,7 +31,7 @@ class AndroidOptions(
 )
 
 class KotlinCompilerOptions(
-    val version: KotlinVersion = KotlinVersion.KOTLIN_2_1,
+    val version: KotlinVersion = KotlinVersion.KOTLIN_2_2,
 )
 
 fun Project.version(): String {
