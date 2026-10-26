@@ -66,7 +66,7 @@ class NoQueryDocumentTest {
         .build()
 
     mockServer.enqueueError(statusCode = 500)
-    kotlin.runCatching {
+    val _ = kotlin.runCatching {
       apolloClient.query(GetRandomQuery())
           .execute()
     }

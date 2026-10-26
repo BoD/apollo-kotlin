@@ -93,7 +93,7 @@ class BenchmarksTest {
         delete(filePath)
         write(filePath, true) {
           writeUtf8("""{"benchmarks":[""")
-          testToNanos.toList().mapIndexed { index, it ->
+          val _ = testToNanos.toList().mapIndexed { index, it ->
             writeUtf8("""{"class":"${BenchmarksTest::class.qualifiedName!!}",""")
             writeUtf8(""""test":"${it.first}",""")
             writeUtf8(""""nanos":${it.second}} """)

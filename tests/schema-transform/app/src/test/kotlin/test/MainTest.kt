@@ -10,8 +10,8 @@ class MainTest {
       product: GetAllQuery.Product,
       review: GetAllQuery.Review
   ) {
-    node.id.length
-    product.id.length
-    review.id.length
+    val a = node.id.length
+    val b = product.id.length
+    val c = review.id.length
   }
 }
