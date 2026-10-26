@@ -9,7 +9,6 @@ plugins {
 apolloLibrary(
     namespace = "com.apollographql.apollo.compiler",
     description = "Generates Kotlin and Java models from GraphQL files",
-    kotlinCompilerOptions = KotlinCompilerOptions(KotlinVersion.KOTLIN_1_9)
 )
 
 dependencies {

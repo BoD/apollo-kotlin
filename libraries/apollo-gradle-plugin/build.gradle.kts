@@ -23,7 +23,6 @@ apolloLibrary(
     namespace = "com.apollographql.apollo.gradle",
     description = "Gradle plugin for generating java/kotlin classes for graphql files",
     jvmTarget = 11, // To compile against AGP 8.0.0
-    kotlinCompilerOptions = KotlinCompilerOptions(KotlinVersion.KOTLIN_2_0), // For better Gradle compatibility
     contributesCtng = false
 )
 

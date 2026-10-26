@@ -31,7 +31,7 @@ class OkHttpClientTest {
           .okHttpClient(okHttpClient)
           .build()
 
-      kotlin.runCatching {
+      val _ = kotlin.runCatching {
         apolloClient.query(HeroNameQuery()).execute()
       }
 
