@@ -18,8 +18,8 @@ import java.io.File
 
 @RunWith(TestParameterInjector::class)
 class TypenameTest(
-    @TestParameter(valuesProvider = ParametersProvider::class) private val graphQLFile: File,
-    @TestParameter("always", "ifFragments", "ifAbstract", "ifPolymorphic") private val addTypename: String,
+    @param:TestParameter(valuesProvider = ParametersProvider::class) private val graphQLFile: File,
+    @param:TestParameter("always", "ifFragments", "ifAbstract", "ifPolymorphic") private val addTypename: String,
 ) {
   @Test
   fun testTypename() {
