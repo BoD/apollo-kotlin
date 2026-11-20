@@ -1,9 +1,9 @@
 listOf(pluginManagement.repositories, dependencyResolutionManagement.repositories).forEach {
   it.apply {
     // Uncomment this one to use the Kotlin "dev" repository
-    // maven("https://redirector.kotlinlang.org/maven/dev/")
+    maven("https://redirector.kotlinlang.org/maven/dev/")
     // Uncomment this one to use the Maven Snapshots repository
-    // maven("https://central.sonatype.com/repository/maven-snapshots/")
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
     // Uncomment this one to use the GradleUp repository
     // maven("https://storage.googleapis.com/gradleup/m2")
 
@@ -38,11 +38,6 @@ listOf(pluginManagement.repositories, dependencyResolutionManagement.repositorie
         // This is why we need to include them here explicitely
         includeModule("com.gradleup.gratatouille", "gratatouille-processor")
         includeModule("com.gradleup.nmcp", "nmcp-tasks")
-      }
-    }
-    maven("https://storage.googleapis.com/apollo-previews/m2") {
-      content {
-        includeGroup("org.jetbrains.dokka")
       }
     }
 

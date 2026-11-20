@@ -45,7 +45,11 @@ tasks.withType<DokkaGenerateTask>().configureEach {
   dependsOn("kspCommonMainKotlinMetadata")
 }
 tasks.configureEach {
-  if (name.endsWith("sourcesJar", ignoreCase = true)) {
+  if (name.endsWith("sourcesJar", ignoreCase = true) ||
+      name.endsWith("kspKotlinJvm", ignoreCase = true) ||
+      name.endsWith("kspDebugKotlinAndroid", ignoreCase = true) ||
+      name.endsWith("kspReleaseKotlinAndroid", ignoreCase = true)
+  ) {
     dependsOn("kspCommonMainKotlinMetadata")
   }
 }
